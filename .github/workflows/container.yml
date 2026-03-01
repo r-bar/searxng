@@ -163,12 +163,14 @@ jobs:
         run: make container.test
 
   release:
-    if: github.repository_owner == 'searxng' && github.ref_name == 'master'
+    if: github.ref_name == 'master'
     name: Release
     runs-on: ubuntu-24.04-arm
     needs:
       - build
       - test
+    env:
+      CONTAINER_IMAGE_ORGANIZATION: r-bar
 
     permissions:
       packages: write
@@ -185,13 +187,6 @@ jobs:
           registry: "ghcr.io"
           username: "${{ github.repository_owner }}"
           password: "${{ secrets.GITHUB_TOKEN }}"
-
-      - name: Login to Docker Hub
-        uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9  # v3.7.0
-        with:
-          registry: "docker.io"
-          username: "${{ secrets.DOCKER_USER }}"
-          password: "${{ secrets.DOCKER_TOKEN }}"
 
       - name: Release
         env:
