@@ -34,6 +34,11 @@ SearXNG is a `metasearch engine`_. Users are neither tracked nor profiled.
    :target: https://translate.codeberg.org/projects/searxng/
    :alt: Translated
 
+Differences from Upstream
+=========================
+
+Adds a number of search engines not provided by the upstream project.
+
 Setup
 =====
 
