@@ -2,8 +2,6 @@
 """DevDocs API Documentation"""
 
 from urllib.parse import quote_plus
-from json import loads
-from searx.utils import html_to_text
 
 about = {
     "website": "https://devdocs.io",
