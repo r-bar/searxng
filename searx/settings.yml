@@ -689,6 +689,12 @@ engines:
     shortcut: da
     timeout: 3.0
 
+  - name: devdocs
+    engine: devdocs
+    shortcut: dev
+    categories: [it, software wikis]
+    timeout: 3.0
+
   - name: devicons
     engine: devicons
     shortcut: di
@@ -1256,14 +1262,9 @@ engines:
     # url: https://lingva.thedaviddelta.com
 
   - name: lobste.rs
-    engine: xpath
-    search_url: https://lobste.rs/search?q={query}&what=stories&order=relevance
-    results_xpath: //li[contains(@class, "story")]
-    url_xpath: .//a[@class="u-url"]/@href
-    title_xpath: .//a[@class="u-url"]
-    content_xpath: .//a[@class="domain"]
-    categories: it
-    shortcut: lo
+    engine: lobsters
+    shortcut: lob
+    categories: [it, social media]
     timeout: 5.0
     disabled: true
     about:
@@ -1710,6 +1711,28 @@ engines:
     shortcut: pypi
     engine: pypi
 
+  - name: path of exile 1 wiki
+    engine: mediawiki
+    shortcut: poe1
+    base_url: https://www.poewiki.net/
+    search_type: text
+    categories: [games, software wikis]
+    timeout: 3.0
+
+  - name: path of exile 2 wiki
+    engine: mediawiki
+    shortcut: poe2
+    base_url: https://www.poe2wiki.net/
+    search_type: text
+    categories: [games, software wikis]
+    timeout: 3.0
+
+  - name: python stdlib
+    engine: python_stdlib
+    shortcut: pystd
+    categories: [it, software wikis]
+    timeout: 3.0
+
   - name: quark
     quark_category: general
     categories: [general]
@@ -1812,6 +1835,18 @@ engines:
     engine: rottentomatoes
     shortcut: rt
     disabled: true
+
+  - name: rust book
+    engine: rust_book
+    shortcut: rustb
+    categories: [it, software wikis]
+    timeout: 3.0
+
+  - name: rust stdlib
+    engine: rust_stdlib
+    shortcut: rust
+    categories: [it, software wikis]
+    timeout: 3.0
 
   # Required dependency: valkey
   # - name: myvalkey
