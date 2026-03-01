@@ -29,9 +29,7 @@ comments_xpath = './/a[contains(@href,"comments")]/text()'
 
 def request(query, params):
     page = params["pageno"]
-    params["url"] = (
-        f"{base_url}/search?q={quote_plus(query)}&what=stories&order=relevance&page={page}"
-    )
+    params["url"] = f"{base_url}/search?q={quote_plus(query)}&what=stories&order=relevance&page={page}"
     return params
 
 
